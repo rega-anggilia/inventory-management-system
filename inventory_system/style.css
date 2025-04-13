@@ -1,0 +1,69 @@
+/* Tambahkan background */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Styling untuk logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    width: 150px; /* Sesuaikan ukuran logo */
+}
+
+/* Gaya untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white; /* Agar tabel tidak transparan */
+}
+
+/* Gaya untuk header tabel */
+th {
+    background-color: #007BFF; /* Warna biru untuk header */
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Gaya untuk isi tabel */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Alternatif warna baris */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Gaya untuk tombol Edit dan Hapus */
+.edit-btn, .delete-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Warna tombol */
+.edit-btn {
+    background-color: #28a745; /* Hijau untuk Edit */
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Merah untuk Hapus */
+}
+
+/* Hover efek tombol */
+.edit-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
+}
