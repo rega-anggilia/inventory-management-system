@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aplikasi Persediaan dan Penjualan</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3e8ff;
+      margin: 0;
+      padding: 20px;
+      color: #4b0082;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff9ff;
+      border: 2px solid #d1aaff;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(120, 0, 180, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6a0dad;
+      margin-bottom: 25px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 8px;
+      border: 1px solid #b38bff;
+      font-size: 14px;
+    }
+
+    input {
+      width: 30%;
+      margin-right: 2%;
+    }
+
+    button {
+      background-color: #ffe066;
+      border: none;
+      font-weight: bold;
+      color: #4b0082;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #e0ccff;
+    }
+
+    table th {
+      background-color: #dfc1ff;
+      color: #4b0082;
+    }
+
+    .section-title {
+      margin-top: 35px;
+      font-weight: bold;
+      color: #6a0dad;
+      font-size: 18px;
+    }
+
+    .jual-btn {
+      background-color: #ffe066;
+      color: #4b0082;
+      border: none;
+      padding: 6px 14px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .input-section {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Aplikasi Persediaan dan Penjualan Toko Bagus Ceria Bulan Februari 2025</h1>
+
+  <div class="input-section">
+    <input type="text" id="namaBarang" placeholder="Nama Produk Baru">
+    <input type="number" id="stokBarang" placeholder="Jumlah Stok">
+    <input type="number" id="hargaBarang" placeholder="Harga (Rp)">
+    <button onclick="tambahBarang()">+ Tambah ke Inventaris</button>
+  </div>
+
+  <div class="section-title">Daftar Barang</div>
+  <table id="tabelBarang">
+    <tr>
+      <th>Kode</th>
+      <th>Nama Barang</th>
+      <th>Stok</th>
+      <th>Harga (Rp)</th>
+      <th>Aksi</th>
+    </tr>
+    <tr>
+      <td>BG001</td>
+      <td>Beras</td>
+      <td class="stok">48</td>
+      <td class="harga">12000</td>
+      <td><button class="jual-btn" onclick="jualBarang(this)">Jual</button></td>
+    </tr>
+    <tr>
+      <td>BG002</td>
+      <td>Minyak Goreng</td>
+      <td class="stok">29</td>
+      <td class="harga">15000</td>
+      <td><button class="jual-btn" onclick="jualBarang(this)">Jual</button></td>
+    </tr>
+    <tr>
+      <td>BG003</td>
+      <td>Gula Pasir</td>
+      <td class="stok">39</td>
+      <td class="harga">11000</td>
+      <td><button class="jual-btn" onclick="jualBarang(this)">Jual</button></td>
+    </tr>
+  </table>
+
+  <div class="section-title">Riwayat Transaksi</div>
+  <table id="tabelTransaksi">
+    <tr>
+      <th>Waktu</th>
+      <th>Barang</th>
+      <th>Jumlah</th>
+      <th>Total Harga (Rp)</th>
+      <th>Kasir</th>
+    </tr>
+    <tr>
+      <td>13/02/2025 08:10</td>
+      <td>Beras</td>
+      <td>2</td>
+      <td>24.000</td>
+      <td>Upin</td>
+    </tr>
+    <tr>
+      <td>15/02/2025 09:00</td>
+      <td>Minyak Goreng</td>
+      <td>1</td>
+      <td>15.000</td>
+      <td>Ipin</td>
+    </tr>
+    <tr>
+      <td>20/02/2025 10:30</td>
+      <td>Gula Pasir</td>
+      <td>1</td>
+      <td>11.000</td>
+      <td>Mail</td>
+    </tr>
+  </table>
+
+  <div class="section-title">Ringkasan Penjualan</div>
+  <table>
+    <tr>
+      <th>Total Barang Terjual</th>
+      <th>Total Pendapatan (Rp)</th>
+      <th>Transaksi Berhasil</th>
+    </tr>
+    <tr>
+      <td id="totalTerjual">4</td>
+      <td id="totalPendapatan">50000</td>
+      <td id="totalTransaksi">3</td>
+    </tr>
+  </table>
+</div>
+
+<script>
+  let kodeCounter = 4;
+  let totalBarangTerjual = 4;
+  let totalPendapatan = 50000;
+  let totalTransaksi = 3;
+
+  function tambahBarang() {
+    const nama = document.getElementById('namaBarang').value;
+    const stok = parseInt(document.getElementById('stokBarang').value);
+    const harga = parseInt(document.getElementById('hargaBarang').value);
+
+    if (!nama || !stok || !harga) return alert("Mohon lengkapi data barang!");
+
+    const tabel = document.getElementById('tabelBarang');
+    const row = tabel.insertRow();
+    const kode = 'BG' + kodeCounter.toString().padStart(3, '0');
+    row.innerHTML = `
+      <td>${kode}</td>
+      <td>${nama}</td>
+      <td class="stok">${stok}</td>
+      <td class="harga">${harga}</td>
+      <td><button class="jual-btn" onclick="jualBarang(this)">Jual</button></td>
+    `;
+    kodeCounter++;
+    document.getElementById('namaBarang').value = '';
+    document.getElementById('stokBarang').value = '';
+    document.getElementById('hargaBarang').value = '';
+  }
+
+  function jualBarang(btn) {
+    const row = btn.parentElement.parentElement;
+    const stokCell = row.querySelector('.stok');
+    const hargaCell = row.querySelector('.harga');
+    const namaBarang = row.cells[1].textContent;
+    let stok = parseInt(stokCell.textContent);
+    const harga = parseInt(hargaCell.textContent);
+
+    if (stok <= 0) {
+      alert("Stok habis!");
+      return;
+    }
+
+    const kasirList = ["Upin", "Ipin", "Mail"];
+    const kasir = kasirList[Math.floor(Math.random() * kasirList.length)];
+
+    stok -= 1;
+    stokCell.textContent = stok;
+
+    const now = new Date();
+    const waktu = now.toLocaleDateString("id-ID") + " " + now.toLocaleTimeString("id-ID", { hour: '2-digit', minute: '2-digit' });
+
+    const transaksiTabel = document.getElementById("tabelTransaksi");
+    const newRow = transaksiTabel.insertRow();
+    newRow.innerHTML = `
+      <td>${waktu}</td>
+      <td>${namaBarang}</td>
+      <td>1</td>
+      <td>${harga.toLocaleString()}</td>
+      <td>${kasir}</td>
+    `;
+
+    totalBarangTerjual += 1;
+    totalPendapatan += harga;
+    totalTransaksi += 1;
+
+    document.getElementById("totalTerjual").textContent = totalBarangTerjual;
+    document.getElementById("totalPendapatan").textContent = totalPendapatan.toLocaleString();
+    document.getElementById("totalTransaksi").textContent = totalTransaksi;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Keuangan PT Karya Abadi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #333;
+            font-size: 24px;
+            margin: 0;
+        }
+        .header p {
+            color: #666;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #593c25; /* Coklat tua */
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2ebe0; /* Krem */
+        }
+        tr:hover {
+            background-color: #eae2d7; /* Highlight saat hover */
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #b3865d; /* Coklat muda */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        </div>
+        <div class="header">
+            <h1>Laporan Keuangan Sederhana</h1>
+            <p>PT Karya Abadi - Bulan Mei 2024</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Tanggal</th>
+                    <th>Keterangan</th>
+                    <th>Debet</th>
+                    <th>Kredit</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>01/05/2024</td>
+                    <td>Saldo Awal</td>
+                    <td></td>
+                    <td>2.000.000</td>
+                    <td>2.000.000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>02/05/2024</td>
+                    <td>Beli ATK</td>
+                    <td></td>
+                    <td>350.000</td>
+                    <td>1.650.000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>03/05/2024</td>
+                    <td>Pembayaran Listrik & Telepon</td>
+                    <td></td>
+                    <td>150.000</td>
+                    <td>1.500.000</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>05/05/2024</td>
+                    <td>Ambil Kas dari BANK</td>
+                    <td>1.500.000</td>
+                    <td></td>
+                    <td>3.000.000</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>07/05/2024</td>
+                    <td>Beli Printer</td>
+                    <td></td>
+                    <td>850.000</td>
+                    <td>2.150.000</td>
+                </tr>
+                <!-- Baris kosong -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- Total -->
+                <tr class="total-row">
+                    <td colspan="3">Jumlah</td>
+                    <td>3.500.000</td>
+                    <td>1.350.000</td>
+                    <td>2.150.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

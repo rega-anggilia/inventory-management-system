@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login SSO Universitas Diponegoro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn-login {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-reset {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .additional-text {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .additional-text a {
+            color: #e74c3c;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Logo_Universitas_Diponegoro.svg/1200px-Logo_Universitas_Diponegoro.svg.png" alt="Logo Universitas Diponegoro">
+        </div>
+        <div class="title">Single Sign On (SSO)</div>
+        <div class="subtitle">Universitas Diponegoro</div>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="NIM/NIP/username/e-mail official Undip" required>
+            </div>
+            <button class="btn-login"><i class="fas fa-lock"></i> LOGIN</button>
+            <button class="btn-reset"><i class="fas fa-key"></i> Reset Password</button>
+        </form>
+        <div class="additional-text">
+            Belum memiliki akun? <a href="#">Daftar sekarang!</a><br>
+            <a href="#">Pendaftaran alumni klik disini</a>
+        </div>
+        <div class="footer">
+            © 2025 DSTI Universitas Diponegoro. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
